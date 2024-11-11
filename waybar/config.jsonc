@@ -1,0 +1,141 @@
+{
+  "layer": "top",
+  "height": 28,
+  "spacing": 8,
+  "modules-left": [
+    "custom/launcher",
+    "sway/mode",
+    "sway/workspaces",
+    "hyprland/workspaces",
+    "hyprland/window",
+    "sway/window"
+  ],
+  "modules-center": [],
+  "modules-right": [
+    "pulseaudio",
+    "network",
+    "memory",
+    "cpu",
+    "backlight",
+    "clock",
+    "tray",
+    "custom/notification",
+    "custom/power"
+  ],
+  "custom/launcher": {
+    "on-click-release": "tofi-drun",
+    "tooltip": false,
+    "format": "<span color=\"#1793D1\">{icon}</span> ",
+    "format-icons": ["󰣇"]
+  },
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "α",
+      "2": "β",
+      "3": "γ",
+      "4": "δ",
+      "5": "ε",
+      "6": "ζ",
+      "7": "η",
+      "8": "θ",
+      "9": "ι",
+      "10": "κ"
+    }
+  },
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "α",
+      "2": "β",
+      "3": "γ",
+      "4": "δ",
+      "5": "ε",
+      "6": "ζ",
+      "7": "η",
+      "8": "θ",
+      "9": "ι",
+      "10": "κ"
+    }
+  },
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 4
+  },
+  "clock": {
+    "format": "{:󰥔 [%I:%M %p]}",
+    "format-alt": "{:󰃭 [%d/%m/%Y]}"
+  },
+  "cpu": {
+    "format": " [{usage}%]",
+    "tooltip": false,
+    "on-double-click": "gnome-system-monitor"
+  },
+  "memory": {
+    "format": " [{}%]",
+    "on-double-click": "gnome-system-monitor"
+  },
+  "backlight": {
+    "scroll-step": 5,
+    "format": "{icon} [{percent}%]",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "tooltip": false
+  },
+  "network": {
+    "format-wifi": " {essid} [{signalStrength}%]",
+    "format-ethernet": "󰈀 {ipaddr}/{cidr}",
+    "tooltip-format": "󰈀 {ifname} via {gwaddr}",
+    "format-linked": "󰈀 {ifname} (No IP)",
+    "format-disconnected": "󱛅 [Disconnected]",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "pulseaudio": {
+    "scroll-step": 5,
+    "format": "{icon} [{volume}%]",
+    "format-bluetooth": "{icon}  [{volume}%]",
+    "format-bluetooth-muted": "{icon}",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "󰋋",
+      "hands-free": "󰋋",
+      "headset": "󰋋",
+      "default": ["", "", ""]
+    },
+    "on-double-click": "pavucontrol"
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+  "custom/power": {
+    "format": "<span color=\"lightsalmon\">{icon}</span>",
+    "format-icons": [""],
+    "on-double-click": "wlogout",
+    "tooltip": false
+  }
+}

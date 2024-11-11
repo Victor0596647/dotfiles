@@ -1,0 +1,119 @@
+/* Colors */
+@define-color bg #0B090A;
+@define-color red #ff0044;
+
+* {
+  border: none;
+  border-radius: 0;
+  /* `otf-font-awesome` is required to be installed for icons */
+  min-height: 0;
+  box-shadow: none;
+  text-shadow: none;
+  font-family: JetBrains Mono;
+  font-size: 11pt;
+}
+
+window#waybar {
+  background: rgba(56, 60, 74, 0.3);
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+.modules-left {
+  padding-left: 16px;
+  padding-right: 16px;
+  color: white;
+  background: @bg;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.modules-right {
+  padding-left: 8px;
+  padding-right: 8px;
+  color: white;
+  background: @bg;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.modules-right * {
+  padding-right: 4px;
+  padding-left: 4px;
+}
+
+.modules-right #tray * {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.modules-right #power {
+  color: red;
+}
+
+/**/
+/*  Workspaces
+ */
+#workspaces {
+  margin-right: 2px;
+  margin-left: 2px;
+  transition: none;
+  background: @bg;
+}
+
+#workspaces button {
+  transition: all ease-in-out 0.1s;
+  background: transparent;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-weight: normal;
+  font-style: normal;
+  color: gray;
+}
+
+#workspaces button.urgent {
+  animation: blink 1s infinite alternate;
+  font-style: italic;
+}
+
+@keyframes blink {
+  from {
+    background: inherit;
+    color: inherit;
+  }
+  to {
+    background: #ffcf22;
+    color: red;
+  }
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  color: #ffffff;
+  background: #161214;
+}
+
+/* Hyprland */
+#workspaces button.active {
+  color: @red;
+  font-weight: bolder;
+}
+
+#workspaces button.focused {
+  color: @red;
+  font-weight: bolder;
+}
+/**/
+/*  Modules
+**/
+
+#mode {
+  margin-left: 5px;
+  transition: none;
+  color: #ffffff;
+  background: lightsalmon;
+}
