@@ -21,6 +21,7 @@ copyConfigs(){
             echo "${config} directory exists! Remove it to install correctly. Skipping..."
         fi
     done
+    echo "Done copying..."
 }
 
 configsToInstall=${*}
