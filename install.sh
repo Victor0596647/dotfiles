@@ -11,8 +11,8 @@ listConfigs(){
 }
 
 copyConfigs(){
-    configs=("${*}")
-    for config in "${configs[@]}"; do
+    configs=(${@})
+    for config in ${configs[@]}; do
         echo "copying $config to $HOME/.config/"
         if [ ! -e "$HOME/.config/${config}" ]; then
             mkdir "$HOME/.config/${config}"
