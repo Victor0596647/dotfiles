@@ -41,8 +41,8 @@ vim.opt.scrolloff = 8       -- Minimum lines to keep above and below the cursor
 vim.opt.sidescrolloff = 8   -- Minimum columns to keep to the left and right of the cursor
 
 -- Performance
-vim.opt.lazyredraw = true   -- Redraw only when necessary
-vim.opt.updatetime = 300    -- Faster completion (default is 4000ms)
+vim.opt.lazyredraw = false   -- Redraw only when necessary
+vim.opt.updatetime = 900    -- Faster completion (default is 4000ms)
 
 -- Mouse
 vim.opt.mouse = "a"         -- Enable mouse support
@@ -59,4 +59,8 @@ vim.opt.foldmethod = "manual" -- Set folding method; "manual" means no auto fold
 vim.opt.foldenable = false    -- Disable folding by default
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+vim.g.markdown_fenced_languages = {
+    "ts=typescript"
+}
 
