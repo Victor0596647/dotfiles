@@ -27,7 +27,7 @@ return {
     { "folke/which-key.nvim", lazy = false, config = function () require("which-key").setup{} end},
     {
         'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        dependencies = { 'nvim-tree/nvim-web-devicons', 'folke/trouble.nvim' },
         config = function()
             require('lualine').setup {
                 options = {
@@ -52,9 +52,9 @@ return {
                 sections = {
                     lualine_a = {'mode'},
                     lualine_b = {'branch', 'diff', 'diagnostics'},
-                    lualine_c = {'filename'},
-                    lualine_x = {'encoding', 'fileformat', 'filetype'},
-                    lualine_y = {'progress'},
+                    lualine_c = {},
+                    lualine_x = {'filetype', 'filename', 'filesize'},
+                    lualine_y = {},
                     lualine_z = {'location'}
                 },
                 inactive_sections = {
@@ -134,5 +134,5 @@ return {
             vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
             vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
         end
-    }
+    },
 }
